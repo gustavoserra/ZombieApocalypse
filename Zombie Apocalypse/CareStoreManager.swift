@@ -8,9 +8,9 @@
 
 import CareKit
 
-class StoreManager: NSObject {
+class CareStoreManager: NSObject {
 
-    static let sharedCarePlanStoreManager = StoreManager()
+    static let sharedCarePlanStoreManager = CareStoreManager()
     
     var store: OCKCarePlanStore
     

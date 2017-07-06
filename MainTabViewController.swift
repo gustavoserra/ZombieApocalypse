@@ -8,8 +8,11 @@
 
 import UIKit
 import ResearchKit
+import CareKit
 
 class MainTabViewController: UITabBarController {
+    
+    fileprivate let carePlanStoreManager = CareStoreManager.sharedCarePlanStoreManager
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -27,7 +30,10 @@ class MainTabViewController: UITabBarController {
     }
 
     fileprivate func createCareCardStack() -> UINavigationController {
-        let viewController = UIViewController()
+        
+        let viewController = OCKCareContentsViewController(carePlanStore: carePlanStoreManager.store)
+        viewController.customGlyphImageName = "heart"
+        viewController.glyphTintColor = UIColor.darkGreen()
         
         viewController.tabBarItem = UITabBarItem(title: "Zombie Training", image: UIImage(named: "carecard"), selectedImage: UIImage(named: "carecard-filled"))
         viewController.title = "Zombie Training"

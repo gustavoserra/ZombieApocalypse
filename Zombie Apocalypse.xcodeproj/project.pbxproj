@@ -13,13 +13,14 @@
 		EC181DBA1F0E312D000079A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC181DB81F0E312D000079A3 /* LaunchScreen.storyboard */; };
 		EC181DDD1F0E402A000079A3 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC181DDA1F0E401B000079A3 /* ResearchKit.framework */; };
 		EC181DDE1F0E402A000079A3 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC181DDA1F0E401B000079A3 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EC181DEB1F0E41BF000079A3 /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC181DE81F0E41B4000079A3 /* CareKit.framework */; };
-		EC181DEC1F0E41BF000079A3 /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC181DE81F0E41B4000079A3 /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC181DF31F0E44D8000079A3 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DF21F0E44D8000079A3 /* MainTabViewController.swift */; };
 		EC181DF91F0E4650000079A3 /* NSDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DF61F0E4650000079A3 /* NSDateComponents.swift */; };
 		EC181DFA1F0E4650000079A3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DF71F0E4650000079A3 /* UIColor.swift */; };
 		EC181DFB1F0E4650000079A3 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DF81F0E4650000079A3 /* DataHelpers.swift */; };
-		EC181DFE1F0E4EC6000079A3 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DFD1F0E4EC6000079A3 /* StoreManager.swift */; };
+		EC181DFE1F0E4EC6000079A3 /* CareStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DFD1F0E4EC6000079A3 /* CareStoreManager.swift */; };
+		EC181E0D1F0E52BD000079A3 /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC181E0A1F0E52B3000079A3 /* CareKit.framework */; };
+		EC181E0E1F0E52BD000079A3 /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC181E0A1F0E52B3000079A3 /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC181E121F0E6740000079A3 /* CareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181E111F0E6740000079A3 /* CareData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,23 +45,23 @@
 			remoteGlobalIDString = B183A4731A8535D100C76870;
 			remoteInfo = ResearchKit;
 		};
-		EC181DE71F0E41B4000079A3 /* PBXContainerItemProxy */ = {
+		EC181E091F0E52B3000079A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */;
+			containerPortal = EC181E031F0E52B3000079A3 /* CareKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8605A5BA1C4F04EC00DD65FF;
 			remoteInfo = CareKit;
 		};
-		EC181DE91F0E41B4000079A3 /* PBXContainerItemProxy */ = {
+		EC181E0B1F0E52B3000079A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */;
+			containerPortal = EC181E031F0E52B3000079A3 /* CareKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8605A5C41C4F04EC00DD65FF;
 			remoteInfo = CareKitTests;
 		};
-		EC181DED1F0E41BF000079A3 /* PBXContainerItemProxy */ = {
+		EC181E0F1F0E52BD000079A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */;
+			containerPortal = EC181E031F0E52B3000079A3 /* CareKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 8605A5B91C4F04EC00DD65FF;
 			remoteInfo = CareKit;
@@ -74,7 +75,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EC181DEC1F0E41BF000079A3 /* CareKit.framework in Embed Frameworks */,
+				EC181E0E1F0E52BD000079A3 /* CareKit.framework in Embed Frameworks */,
 				EC181DDE1F0E402A000079A3 /* ResearchKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -90,12 +91,13 @@
 		EC181DB91F0E312D000079A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC181DBB1F0E312D000079A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC181DD31F0E401A000079A3 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
-		EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = ../carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		EC181DF21F0E44D8000079A3 /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabViewController.swift; path = ../MainTabViewController.swift; sourceTree = "<group>"; };
 		EC181DF61F0E4650000079A3 /* NSDateComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateComponents.swift; sourceTree = "<group>"; };
 		EC181DF71F0E4650000079A3 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		EC181DF81F0E4650000079A3 /* DataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelpers.swift; sourceTree = "<group>"; };
-		EC181DFD1F0E4EC6000079A3 /* StoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		EC181DFD1F0E4EC6000079A3 /* CareStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareStoreManager.swift; sourceTree = "<group>"; };
+		EC181E031F0E52B3000079A3 /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = ../carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
+		EC181E111F0E6740000079A3 /* CareData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC181DEB1F0E41BF000079A3 /* CareKit.framework in Frameworks */,
+				EC181E0D1F0E52BD000079A3 /* CareKit.framework in Frameworks */,
 				EC181DDD1F0E402A000079A3 /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,19 +154,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC181DE21F0E41B4000079A3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EC181DE81F0E41B4000079A3 /* CareKit.framework */,
-				EC181DEA1F0E41B4000079A3 /* CareKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		EC181DEF1F0E4230000079A3 /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */,
+				EC181E031F0E52B3000079A3 /* CareKit.xcodeproj */,
 				EC181DD31F0E401A000079A3 /* ResearchKit.xcodeproj */,
 			);
 			name = "Linked Frameworks";
@@ -183,9 +176,19 @@
 		EC181DFC1F0E4E97000079A3 /* Care Plan Store */ = {
 			isa = PBXGroup;
 			children = (
-				EC181DFD1F0E4EC6000079A3 /* StoreManager.swift */,
+				EC181DFD1F0E4EC6000079A3 /* CareStoreManager.swift */,
+				EC181E111F0E6740000079A3 /* CareData.swift */,
 			);
 			name = "Care Plan Store";
+			sourceTree = "<group>";
+		};
+		EC181E041F0E52B3000079A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC181E0A1F0E52B3000079A3 /* CareKit.framework */,
+				EC181E0C1F0E52B3000079A3 /* CareKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +207,7 @@
 			);
 			dependencies = (
 				EC181DE01F0E402A000079A3 /* PBXTargetDependency */,
-				EC181DEE1F0E41BF000079A3 /* PBXTargetDependency */,
+				EC181E101F0E52BD000079A3 /* PBXTargetDependency */,
 			);
 			name = "Zombie Apocalypse";
 			productName = "Zombie Apocalypse";
@@ -240,8 +243,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = EC181DE21F0E41B4000079A3 /* Products */;
-					ProjectRef = EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */;
+					ProductGroup = EC181E041F0E52B3000079A3 /* Products */;
+					ProjectRef = EC181E031F0E52B3000079A3 /* CareKit.xcodeproj */;
 				},
 				{
 					ProductGroup = EC181DD41F0E401A000079A3 /* Products */;
@@ -270,18 +273,18 @@
 			remoteRef = EC181DDB1F0E401B000079A3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		EC181DE81F0E41B4000079A3 /* CareKit.framework */ = {
+		EC181E0A1F0E52B3000079A3 /* CareKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CareKit.framework;
-			remoteRef = EC181DE71F0E41B4000079A3 /* PBXContainerItemProxy */;
+			remoteRef = EC181E091F0E52B3000079A3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		EC181DEA1F0E41B4000079A3 /* CareKitTests.xctest */ = {
+		EC181E0C1F0E52B3000079A3 /* CareKitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CareKitTests.xctest;
-			remoteRef = EC181DE91F0E41B4000079A3 /* PBXContainerItemProxy */;
+			remoteRef = EC181E0B1F0E52B3000079A3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -306,8 +309,9 @@
 			files = (
 				EC181DF91F0E4650000079A3 /* NSDateComponents.swift in Sources */,
 				EC181DFA1F0E4650000079A3 /* UIColor.swift in Sources */,
+				EC181E121F0E6740000079A3 /* CareData.swift in Sources */,
 				EC181DFB1F0E4650000079A3 /* DataHelpers.swift in Sources */,
-				EC181DFE1F0E4EC6000079A3 /* StoreManager.swift in Sources */,
+				EC181DFE1F0E4EC6000079A3 /* CareStoreManager.swift in Sources */,
 				EC181DB01F0E312D000079A3 /* AppDelegate.swift in Sources */,
 				EC181DF31F0E44D8000079A3 /* MainTabViewController.swift in Sources */,
 			);
@@ -321,10 +325,10 @@
 			name = ResearchKit;
 			targetProxy = EC181DDF1F0E402A000079A3 /* PBXContainerItemProxy */;
 		};
-		EC181DEE1F0E41BF000079A3 /* PBXTargetDependency */ = {
+		EC181E101F0E52BD000079A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CareKit;
-			targetProxy = EC181DED1F0E41BF000079A3 /* PBXContainerItemProxy */;
+			targetProxy = EC181E0F1F0E52BD000079A3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
