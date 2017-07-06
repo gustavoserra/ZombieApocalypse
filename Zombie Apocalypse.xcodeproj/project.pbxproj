@@ -8,20 +8,92 @@
 
 /* Begin PBXBuildFile section */
 		EC181DB01F0E312D000079A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DAF1F0E312D000079A3 /* AppDelegate.swift */; };
-		EC181DB21F0E312D000079A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DB11F0E312D000079A3 /* ViewController.swift */; };
 		EC181DB51F0E312D000079A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC181DB31F0E312D000079A3 /* Main.storyboard */; };
 		EC181DB71F0E312D000079A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC181DB61F0E312D000079A3 /* Assets.xcassets */; };
 		EC181DBA1F0E312D000079A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC181DB81F0E312D000079A3 /* LaunchScreen.storyboard */; };
+		EC181DDD1F0E402A000079A3 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC181DDA1F0E401B000079A3 /* ResearchKit.framework */; };
+		EC181DDE1F0E402A000079A3 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC181DDA1F0E401B000079A3 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC181DEB1F0E41BF000079A3 /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC181DE81F0E41B4000079A3 /* CareKit.framework */; };
+		EC181DEC1F0E41BF000079A3 /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC181DE81F0E41B4000079A3 /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC181DF31F0E44D8000079A3 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DF21F0E44D8000079A3 /* MainTabViewController.swift */; };
+		EC181DF91F0E4650000079A3 /* NSDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DF61F0E4650000079A3 /* NSDateComponents.swift */; };
+		EC181DFA1F0E4650000079A3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DF71F0E4650000079A3 /* UIColor.swift */; };
+		EC181DFB1F0E4650000079A3 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DF81F0E4650000079A3 /* DataHelpers.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC181DD91F0E401B000079A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC181DD31F0E401A000079A3 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		EC181DDB1F0E401B000079A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC181DD31F0E401A000079A3 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+		EC181DDF1F0E402A000079A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC181DD31F0E401A000079A3 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		EC181DE71F0E41B4000079A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8605A5BA1C4F04EC00DD65FF;
+			remoteInfo = CareKit;
+		};
+		EC181DE91F0E41B4000079A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8605A5C41C4F04EC00DD65FF;
+			remoteInfo = CareKitTests;
+		};
+		EC181DED1F0E41BF000079A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8605A5B91C4F04EC00DD65FF;
+			remoteInfo = CareKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC181DCF1F0E35CD000079A3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EC181DEC1F0E41BF000079A3 /* CareKit.framework in Embed Frameworks */,
+				EC181DDE1F0E402A000079A3 /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EC181DAC1F0E312D000079A3 /* Zombie Apocalypse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zombie Apocalypse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC181DAF1F0E312D000079A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC181DB11F0E312D000079A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EC181DB41F0E312D000079A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC181DB61F0E312D000079A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC181DB91F0E312D000079A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC181DBB1F0E312D000079A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC181DD31F0E401A000079A3 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
+		EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = ../carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
+		EC181DF21F0E44D8000079A3 /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabViewController.swift; path = ../MainTabViewController.swift; sourceTree = "<group>"; };
+		EC181DF61F0E4650000079A3 /* NSDateComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateComponents.swift; sourceTree = "<group>"; };
+		EC181DF71F0E4650000079A3 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		EC181DF81F0E4650000079A3 /* DataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC181DEB1F0E41BF000079A3 /* CareKit.framework in Frameworks */,
+				EC181DDD1F0E402A000079A3 /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				EC181DAE1F0E312D000079A3 /* Zombie Apocalypse */,
+				EC181DEF1F0E4230000079A3 /* Linked Frameworks */,
 				EC181DAD1F0E312D000079A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,13 +130,51 @@
 			isa = PBXGroup;
 			children = (
 				EC181DAF1F0E312D000079A3 /* AppDelegate.swift */,
-				EC181DB11F0E312D000079A3 /* ViewController.swift */,
+				EC181DF21F0E44D8000079A3 /* MainTabViewController.swift */,
 				EC181DB31F0E312D000079A3 /* Main.storyboard */,
 				EC181DB61F0E312D000079A3 /* Assets.xcassets */,
+				EC181DF51F0E4638000079A3 /* Utilities */,
 				EC181DB81F0E312D000079A3 /* LaunchScreen.storyboard */,
 				EC181DBB1F0E312D000079A3 /* Info.plist */,
 			);
 			path = "Zombie Apocalypse";
+			sourceTree = "<group>";
+		};
+		EC181DD41F0E401A000079A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC181DDA1F0E401B000079A3 /* ResearchKit.framework */,
+				EC181DDC1F0E401B000079A3 /* ResearchKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC181DE21F0E41B4000079A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC181DE81F0E41B4000079A3 /* CareKit.framework */,
+				EC181DEA1F0E41B4000079A3 /* CareKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC181DEF1F0E4230000079A3 /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */,
+				EC181DD31F0E401A000079A3 /* ResearchKit.xcodeproj */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		EC181DF51F0E4638000079A3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EC181DF61F0E4650000079A3 /* NSDateComponents.swift */,
+				EC181DF71F0E4650000079A3 /* UIColor.swift */,
+				EC181DF81F0E4650000079A3 /* DataHelpers.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,10 +187,13 @@
 				EC181DA81F0E312D000079A3 /* Sources */,
 				EC181DA91F0E312D000079A3 /* Frameworks */,
 				EC181DAA1F0E312D000079A3 /* Resources */,
+				EC181DCF1F0E35CD000079A3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EC181DE01F0E402A000079A3 /* PBXTargetDependency */,
+				EC181DEE1F0E41BF000079A3 /* PBXTargetDependency */,
 			);
 			name = "Zombie Apocalypse";
 			productName = "Zombie Apocalypse";
@@ -111,12 +227,53 @@
 			mainGroup = EC181DA31F0E312D000079A3;
 			productRefGroup = EC181DAD1F0E312D000079A3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EC181DE21F0E41B4000079A3 /* Products */;
+					ProjectRef = EC181DE11F0E41B4000079A3 /* CareKit.xcodeproj */;
+				},
+				{
+					ProductGroup = EC181DD41F0E401A000079A3 /* Products */;
+					ProjectRef = EC181DD31F0E401A000079A3 /* ResearchKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				EC181DAB1F0E312D000079A3 /* Zombie Apocalypse */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EC181DDA1F0E401B000079A3 /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = EC181DD91F0E401B000079A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC181DDC1F0E401B000079A3 /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = EC181DDB1F0E401B000079A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC181DE81F0E41B4000079A3 /* CareKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CareKit.framework;
+			remoteRef = EC181DE71F0E41B4000079A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EC181DEA1F0E41B4000079A3 /* CareKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CareKitTests.xctest;
+			remoteRef = EC181DE91F0E41B4000079A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EC181DAA1F0E312D000079A3 /* Resources */ = {
@@ -136,12 +293,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC181DB21F0E312D000079A3 /* ViewController.swift in Sources */,
+				EC181DF91F0E4650000079A3 /* NSDateComponents.swift in Sources */,
+				EC181DFA1F0E4650000079A3 /* UIColor.swift in Sources */,
+				EC181DFB1F0E4650000079A3 /* DataHelpers.swift in Sources */,
 				EC181DB01F0E312D000079A3 /* AppDelegate.swift in Sources */,
+				EC181DF31F0E44D8000079A3 /* MainTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC181DE01F0E402A000079A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = EC181DDF1F0E402A000079A3 /* PBXContainerItemProxy */;
+		};
+		EC181DEE1F0E41BF000079A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CareKit;
+			targetProxy = EC181DED1F0E41BF000079A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EC181DB31F0E312D000079A3 /* Main.storyboard */ = {
@@ -259,6 +432,7 @@
 		EC181DBF1F0E312D000079A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Zombie Apocalypse/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -271,6 +445,7 @@
 		EC181DC01F0E312D000079A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Zombie Apocalypse/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -299,6 +474,7 @@
 				EC181DC01F0E312D000079A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
