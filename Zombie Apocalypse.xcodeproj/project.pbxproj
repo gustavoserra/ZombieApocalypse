@@ -19,6 +19,7 @@
 		EC181DF91F0E4650000079A3 /* NSDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DF61F0E4650000079A3 /* NSDateComponents.swift */; };
 		EC181DFA1F0E4650000079A3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DF71F0E4650000079A3 /* UIColor.swift */; };
 		EC181DFB1F0E4650000079A3 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DF81F0E4650000079A3 /* DataHelpers.swift */; };
+		EC181DFE1F0E4EC6000079A3 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181DFD1F0E4EC6000079A3 /* StoreManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		EC181DF61F0E4650000079A3 /* NSDateComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateComponents.swift; sourceTree = "<group>"; };
 		EC181DF71F0E4650000079A3 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		EC181DF81F0E4650000079A3 /* DataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelpers.swift; sourceTree = "<group>"; };
+		EC181DFD1F0E4EC6000079A3 /* StoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		EC181DAE1F0E312D000079A3 /* Zombie Apocalypse */ = {
 			isa = PBXGroup;
 			children = (
+				EC181DFC1F0E4E97000079A3 /* Care Plan Store */,
 				EC181DAF1F0E312D000079A3 /* AppDelegate.swift */,
 				EC181DF21F0E44D8000079A3 /* MainTabViewController.swift */,
 				EC181DB31F0E312D000079A3 /* Main.storyboard */,
@@ -175,6 +178,14 @@
 				EC181DF81F0E4650000079A3 /* DataHelpers.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		EC181DFC1F0E4E97000079A3 /* Care Plan Store */ = {
+			isa = PBXGroup;
+			children = (
+				EC181DFD1F0E4EC6000079A3 /* StoreManager.swift */,
+			);
+			name = "Care Plan Store";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 				EC181DF91F0E4650000079A3 /* NSDateComponents.swift in Sources */,
 				EC181DFA1F0E4650000079A3 /* UIColor.swift in Sources */,
 				EC181DFB1F0E4650000079A3 /* DataHelpers.swift in Sources */,
+				EC181DFE1F0E4EC6000079A3 /* StoreManager.swift in Sources */,
 				EC181DB01F0E312D000079A3 /* AppDelegate.swift in Sources */,
 				EC181DF31F0E44D8000079A3 /* MainTabViewController.swift in Sources */,
 			);
