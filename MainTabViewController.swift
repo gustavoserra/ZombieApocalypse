@@ -40,6 +40,8 @@ class MainTabViewController: UITabBarController {
         viewController.customGlyphImageName = "heart"
         viewController.glyphTintColor = UIColor.darkGreen()
         
+        viewController.delegate = self
+        
         viewController.tabBarItem = UITabBarItem(title: "Zombie Training", image: UIImage(named: "carecard"), selectedImage: UIImage(named: "carecard-filled"))
         viewController.title = "Zombie Training"
         return UINavigationController(rootViewController: viewController)
@@ -60,5 +62,18 @@ class MainTabViewController: UITabBarController {
         viewController.title = "Connect"
         return UINavigationController(rootViewController: viewController)
     }
+}
 
+extension MainTabViewController: OCKCareContentsViewControllerDelegate {
+    
+    func careContentsViewController(_ viewController: OCKCareContentsViewController, didSelectRowWithAssessmentEvent assessmentEvent: OCKCarePlanEvent) {
+        
+        guard let userInfo = assessmentEvent.activity.userInfo,
+            let task: ORKTask = userInfo["ORKTask"] as? ORKTask
+            else { return }
+        
+        let taskViewController = ORKTaskViewController(task: task, taskRun: nil)
+        
+        present(taskViewController, animated: true, completion: nil)
+    }
 }
