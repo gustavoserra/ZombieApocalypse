@@ -7,6 +7,7 @@
 //
 
 import CareKit
+import ResearchKit
 
 enum ActivityIdentifier: String {
     
@@ -61,9 +62,31 @@ class CareData: NSObject {
                                                          resultResettable: true,
                                                          userInfo: nil)
         
+        let pulseActivity = OCKCarePlanActivity.assessment(withIdentifier: ActivityIdentifier.pulse.rawValue,
+                                                           groupIdentifier: nil,
+                                                           title: "Pulse",
+                                                           text: "Do you have one?",
+                                                           tintColor: UIColor.darkGreen(),
+                                                           resultResettable: true,
+                                                           schedule: CareData.dailyScheduleRepeating(occurencesPerDay: 1),
+                                                           userInfo: ["ORKTask": AssessmentTaskFactory.makeTemperatureAssessmentTask()],
+                                                           optional: false)
+        
+        let temperatureActivity = OCKCarePlanActivity.assessment(withIdentifier: ActivityIdentifier.temperature.rawValue,
+                                                                 groupIdentifier: nil,
+                                                                 title: "Temperature",
+                                                                 text: "Oral",
+                                                                 tintColor: UIColor.darkYellow(),
+                                                                 resultResettable: true,
+                                                                 schedule: CareData.dailyScheduleRepeating(occurencesPerDay: 1),
+                                                                 userInfo: ["OCKTask": AssessmentTaskFactory.makeTemperatureAssessmentTask()],
+                                                                 optional: false)
+        
         let activities = [cardioActivity,
                           limberUpActivity,
-                          targetPracticeActivity]
+                          targetPracticeActivity,
+                          pulseActivity,
+                          temperatureActivity]
         
         super.init()
         
@@ -74,7 +97,7 @@ class CareData: NSObject {
     
     func add(activity: OCKCarePlanActivity) {
         
-        careStore.activity(forIdentifier: activity.identifier) { [weak self] (success, fetchedActivity, error) in
+        self.careStore.activity(forIdentifier: activity.identifier) { [weak self] (success, fetchedActivity, error) in
             
             guard success else { return }
             guard let strongSelf = self else { return }

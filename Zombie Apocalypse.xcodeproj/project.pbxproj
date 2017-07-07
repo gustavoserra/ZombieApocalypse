@@ -21,6 +21,7 @@
 		EC181E0D1F0E52BD000079A3 /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC181E0A1F0E52B3000079A3 /* CareKit.framework */; };
 		EC181E0E1F0E52BD000079A3 /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC181E0A1F0E52B3000079A3 /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC181E121F0E6740000079A3 /* CareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181E111F0E6740000079A3 /* CareData.swift */; };
+		ECFC77751F0F912A006C77E5 /* AssessmentTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC77741F0F912A006C77E5 /* AssessmentTaskFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		EC181DFD1F0E4EC6000079A3 /* CareStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareStoreManager.swift; sourceTree = "<group>"; };
 		EC181E031F0E52B3000079A3 /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = ../carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		EC181E111F0E6740000079A3 /* CareData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareData.swift; sourceTree = "<group>"; };
+		ECFC77741F0F912A006C77E5 /* AssessmentTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentTaskFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			children = (
 				EC181DFD1F0E4EC6000079A3 /* CareStoreManager.swift */,
 				EC181E111F0E6740000079A3 /* CareData.swift */,
+				ECFC77741F0F912A006C77E5 /* AssessmentTaskFactory.swift */,
 			);
 			name = "Care Plan Store";
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				EC181DFE1F0E4EC6000079A3 /* CareStoreManager.swift in Sources */,
 				EC181DB01F0E312D000079A3 /* AppDelegate.swift in Sources */,
 				EC181DF31F0E44D8000079A3 /* MainTabViewController.swift in Sources */,
+				ECFC77751F0F912A006C77E5 /* AssessmentTaskFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
