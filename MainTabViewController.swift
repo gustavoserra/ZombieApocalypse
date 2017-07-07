@@ -14,7 +14,12 @@ class MainTabViewController: UITabBarController {
     
     fileprivate let carePlanStoreManager = CareStoreManager.sharedCarePlanStoreManager
     
+    fileprivate let carePlanData: CareData
+    
     required init?(coder aDecoder: NSCoder) {
+        
+        self.carePlanData = CareData(careStore: self.carePlanStoreManager.store)
+        
         super.init(coder: aDecoder)
         
         let careCardStack = createCareCardStack()
