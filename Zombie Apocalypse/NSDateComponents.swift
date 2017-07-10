@@ -23,6 +23,7 @@
 import Foundation
 
 extension DateComponents {
+    
   static var firstDateOfCurrentWeek: DateComponents {
     var beginningOfWeek: NSDate?
     

@@ -25,6 +25,9 @@ class MainTabViewController: UITabBarController {
         
         super.init(coder: aDecoder)
         
+        self.carePlanStoreManager.delegate = self
+        self.carePlanStoreManager.updateInsights()
+        
         let careCardStack = createCareCardStack()
         let insightsStack = createInsightsStack()
         let connectStack = createConnectStack()
@@ -56,6 +59,8 @@ class MainTabViewController: UITabBarController {
     fileprivate func createInsightsStack() -> UINavigationController {
         
         let viewController = OCKInsightsViewController(insightItems: [OCKInsightItem.emptyInsightsMessage()])
+        
+        self.insightsViewController = viewController
         
         viewController.tabBarItem = UITabBarItem(title: "Insights", image: UIImage(named: "insights"), selectedImage: UIImage.init(named: "insights-filled"))
         viewController.title = "Insights"
@@ -110,8 +115,16 @@ extension MainTabViewController: ORKTaskViewControllerDelegate {
                                           state: .completed) { (success, _, error) in
                                             
                                             if !success {
-                                                print(error?.localizedDescription)
+                                                print(error!.localizedDescription)
                                             }
         }
+    }
+}
+
+extension MainTabViewController: CareStoreManagerDelegate {
+    
+    func careStore(_ store: OCKCarePlanStore, didUpdateInsights insights: [OCKInsightItem]) {
+        
+        self.insightsViewController?.items = insights
     }
 }

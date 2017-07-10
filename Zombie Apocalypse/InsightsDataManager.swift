@@ -15,6 +15,17 @@ class InsightsDataManager {
     var completionData = [(dateComponent: DateComponents, value: Double)]()
     let gatherDataGroup = DispatchGroup()
     
+    var completionSeries: OCKBarSeries {
+        
+        let completionValues = completionData.map({ NSNumber(value: $0.value) })
+        let completionValueLabels = completionValues.map({ NumberFormatter.localizedString(from: $0, number: .percent) })
+        
+        return OCKBarSeries(title: "Zombie Activities",
+                            values: completionValues,
+                            valueLabels: completionValueLabels,
+                            tintColor: UIColor.darkOrange())
+    }
+    
     func fetchDailyCompletion(startDate: DateComponents, endDate: DateComponents) {
         
         self.gatherDataGroup.enter()
@@ -50,9 +61,34 @@ class InsightsDataManager {
             self.fetchDailyCompletion(startDate: startDateComponents, endDate: endDateComponents)
             
             self.gatherDataGroup.notify(queue: DispatchQueue.main, execute: { 
-                print("completion data: \(self.completionData)")
-                completion(false, nil)
+                
+                let insightItems = self.produceInsightsForAdherence()
+                
+                completion(true, insightItems)
             })
         }
+    }
+    
+    func produceInsightsForAdherence() -> [OCKInsightItem] {
+        
+        let dateStrings = completionData.map({(entry) -> String in
+            
+            guard let date = Calendar.current.date(from: entry.dateComponent) else { return "" }
+            
+            return DateFormatter.localizedString(from: date,
+                                                 dateStyle: .short,
+                                                 timeStyle: .none)
+        })
+        
+        //TODO build assessment series
+        
+        let chart = OCKBarChart(title: "Zombie Training Plan",
+                                text: "Training Compilance and Zombie Risks",
+                                tintColor: UIColor.green,
+                                axisTitles: dateStrings,
+                                axisSubtitles: nil,
+                                dataSeries: [completionSeries])
+        
+        return [chart]
     }
 }

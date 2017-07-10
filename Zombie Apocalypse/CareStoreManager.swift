@@ -9,11 +9,17 @@
 import CareKit
 import ResearchKit
 
+protocol CareStoreManagerDelegate: class {
+    func careStore(_: OCKCarePlanStore, didUpdateInsights insights: [OCKInsightItem])
+}
+
 class CareStoreManager: NSObject {
 
     static let sharedCarePlanStoreManager = CareStoreManager()
     
     var store: OCKCarePlanStore
+    
+    weak var delegate: CareStoreManagerDelegate?
     
     override init() {
         
@@ -60,7 +66,7 @@ class CareStoreManager: NSObject {
             
             guard let insightItems = insightItems, success else { return }
             
-            //TODO - pass inshits items to insights controller.
+            self.delegate?.careStore(self.store, didUpdateInsights: insightItems)
         }
     }
 }
