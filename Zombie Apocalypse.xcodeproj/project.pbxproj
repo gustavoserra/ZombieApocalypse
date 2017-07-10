@@ -22,6 +22,7 @@
 		EC181E0E1F0E52BD000079A3 /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC181E0A1F0E52B3000079A3 /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC181E121F0E6740000079A3 /* CareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181E111F0E6740000079A3 /* CareData.swift */; };
 		EC647A0E1F137B9D00BE04E8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC647A0D1F137B9D00BE04E8 /* HealthKit.framework */; };
+		EC647A141F13922300BE04E8 /* OCKInsightItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC647A131F13922300BE04E8 /* OCKInsightItem.swift */; };
 		ECFC77751F0F912A006C77E5 /* AssessmentTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC77741F0F912A006C77E5 /* AssessmentTaskFactory.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		EC181E111F0E6740000079A3 /* CareData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareData.swift; sourceTree = "<group>"; };
 		EC647A0B1F137B9C00BE04E8 /* Zombie Apocalypse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Zombie Apocalypse.entitlements"; sourceTree = "<group>"; };
 		EC647A0D1F137B9D00BE04E8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		EC647A131F13922300BE04E8 /* OCKInsightItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCKInsightItem.swift; sourceTree = "<group>"; };
 		ECFC77741F0F912A006C77E5 /* AssessmentTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentTaskFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +179,7 @@
 				EC181DF61F0E4650000079A3 /* NSDateComponents.swift */,
 				EC181DF71F0E4650000079A3 /* UIColor.swift */,
 				EC181DF81F0E4650000079A3 /* DataHelpers.swift */,
+				EC647A131F13922300BE04E8 /* OCKInsightItem.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				EC181DFA1F0E4650000079A3 /* UIColor.swift in Sources */,
 				EC181E121F0E6740000079A3 /* CareData.swift in Sources */,
 				EC181DFB1F0E4650000079A3 /* DataHelpers.swift in Sources */,
+				EC647A141F13922300BE04E8 /* OCKInsightItem.swift in Sources */,
 				EC181DFE1F0E4EC6000079A3 /* CareStoreManager.swift in Sources */,
 				EC181DB01F0E312D000079A3 /* AppDelegate.swift in Sources */,
 				EC181DF31F0E44D8000079A3 /* MainTabViewController.swift in Sources */,

@@ -17,6 +17,7 @@ class MainTabViewController: UITabBarController {
     fileprivate let carePlanData: CareData
     
     fileprivate var careCardViewController: OCKCareContentsViewController? = nil
+    fileprivate var insightsViewController: OCKInsightsViewController? = nil
     
     required init?(coder aDecoder: NSCoder) {
         
@@ -48,14 +49,17 @@ class MainTabViewController: UITabBarController {
         
         viewController.tabBarItem = UITabBarItem(title: "Zombie Training", image: UIImage(named: "carecard"), selectedImage: UIImage(named: "carecard-filled"))
         viewController.title = "Zombie Training"
+        
         return UINavigationController(rootViewController: viewController)
     }
     
     fileprivate func createInsightsStack() -> UINavigationController {
-        let viewController = UIViewController()
+        
+        let viewController = OCKInsightsViewController(insightItems: [OCKInsightItem.emptyInsightsMessage()])
         
         viewController.tabBarItem = UITabBarItem(title: "Insights", image: UIImage(named: "insights"), selectedImage: UIImage.init(named: "insights-filled"))
         viewController.title = "Insights"
+        
         return UINavigationController(rootViewController: viewController)
     }
     
