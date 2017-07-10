@@ -23,6 +23,7 @@
 		EC181E121F0E6740000079A3 /* CareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181E111F0E6740000079A3 /* CareData.swift */; };
 		EC647A0E1F137B9D00BE04E8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC647A0D1F137B9D00BE04E8 /* HealthKit.framework */; };
 		EC647A141F13922300BE04E8 /* OCKInsightItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC647A131F13922300BE04E8 /* OCKInsightItem.swift */; };
+		EC647A1A1F13AAF100BE04E8 /* InsightsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC647A191F13AAF100BE04E8 /* InsightsDataManager.swift */; };
 		ECFC77751F0F912A006C77E5 /* AssessmentTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC77741F0F912A006C77E5 /* AssessmentTaskFactory.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		EC647A0B1F137B9C00BE04E8 /* Zombie Apocalypse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Zombie Apocalypse.entitlements"; sourceTree = "<group>"; };
 		EC647A0D1F137B9D00BE04E8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		EC647A131F13922300BE04E8 /* OCKInsightItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCKInsightItem.swift; sourceTree = "<group>"; };
+		EC647A191F13AAF100BE04E8 /* InsightsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightsDataManager.swift; sourceTree = "<group>"; };
 		ECFC77741F0F912A006C77E5 /* AssessmentTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentTaskFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 				EC181DFD1F0E4EC6000079A3 /* CareStoreManager.swift */,
 				EC181E111F0E6740000079A3 /* CareData.swift */,
 				ECFC77741F0F912A006C77E5 /* AssessmentTaskFactory.swift */,
+				EC647A191F13AAF100BE04E8 /* InsightsDataManager.swift */,
 			);
 			name = "Care Plan Store";
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				EC181DFB1F0E4650000079A3 /* DataHelpers.swift in Sources */,
 				EC647A141F13922300BE04E8 /* OCKInsightItem.swift in Sources */,
 				EC181DFE1F0E4EC6000079A3 /* CareStoreManager.swift in Sources */,
+				EC647A1A1F13AAF100BE04E8 /* InsightsDataManager.swift in Sources */,
 				EC181DB01F0E312D000079A3 /* AppDelegate.swift in Sources */,
 				EC181DF31F0E44D8000079A3 /* MainTabViewController.swift in Sources */,
 				ECFC77751F0F912A006C77E5 /* AssessmentTaskFactory.swift in Sources */,

@@ -31,6 +31,8 @@ class CareStoreManager: NSObject {
         store = OCKCarePlanStore(persistenceDirectoryURL: storeURL)
         
         super.init()
+        
+        self.store.delegate = self
     }
     
     // Convert ORKTaskResult to OCKCarePlanEventResult.
@@ -50,5 +52,23 @@ class CareStoreManager: NSObject {
         }
         
         fatalError("Unexpected task result type")
+    }
+    
+    func updateInsights() {
+        
+        InsightsDataManager().updateInsights { (success, insightItems) in
+            
+            guard let insightItems = insightItems, success else { return }
+            
+            //TODO - pass inshits items to insights controller.
+        }
+    }
+}
+
+extension CareStoreManager: OCKCarePlanStoreDelegate {
+    
+    func carePlanStore(_ store: OCKCarePlanStore, didReceiveUpdateOf event: OCKCarePlanEvent) {
+        
+        self.updateInsights()
     }
 }
