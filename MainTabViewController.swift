@@ -16,6 +16,8 @@ class MainTabViewController: UITabBarController {
     
     fileprivate let carePlanData: CareData
     
+    fileprivate var careCardViewController: OCKCareContentsViewController? = nil
+    
     required init?(coder aDecoder: NSCoder) {
         
         self.carePlanData = CareData(careStore: self.carePlanStoreManager.store)
@@ -39,6 +41,8 @@ class MainTabViewController: UITabBarController {
         let viewController = OCKCareContentsViewController(carePlanStore: carePlanStoreManager.store)
         viewController.customGlyphImageName = "heart"
         viewController.glyphTintColor = UIColor.darkGreen()
+        
+        self.careCardViewController = viewController
         
         viewController.delegate = self
         
@@ -66,6 +70,8 @@ class MainTabViewController: UITabBarController {
 
 extension MainTabViewController: OCKCareContentsViewControllerDelegate {
     
+    // If user select one assessment event we need to open
+    // one view controller fou user does the task.
     func careContentsViewController(_ viewController: OCKCareContentsViewController, didSelectRowWithAssessmentEvent assessmentEvent: OCKCarePlanEvent) {
         
         guard let userInfo = assessmentEvent.activity.userInfo,
@@ -74,6 +80,34 @@ extension MainTabViewController: OCKCareContentsViewControllerDelegate {
         
         let taskViewController = ORKTaskViewController(task: task, taskRun: nil)
         
+        taskViewController.delegate = self
+        
         present(taskViewController, animated: true, completion: nil)
+    }
+}
+
+extension MainTabViewController: ORKTaskViewControllerDelegate {
+    
+    // When user finish the task we need to hold the result and
+    // convert this from ORKTaskResult to OCKCarePlanEventResult.
+    func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
+        
+        defer {
+            dismiss(animated: true, completion: nil)
+        }
+        
+        guard reason == .completed else { return }
+        guard let careCardViewController = careCardViewController,
+            let event = careCardViewController.lastSelectedEvent else { return }
+        
+        let carePlanResult = carePlanStoreManager.buildCarePlanResultFrom(taskResult: taskViewController.result)
+        carePlanStoreManager.store.update(event,
+                                          with: carePlanResult,
+                                          state: .completed) { (success, _, error) in
+                                            
+                                            if !success {
+                                                print(error?.localizedDescription)
+                                            }
+        }
     }
 }

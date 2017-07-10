@@ -79,7 +79,7 @@ class CareData: NSObject {
                                                                  tintColor: UIColor.darkYellow(),
                                                                  resultResettable: true,
                                                                  schedule: CareData.dailyScheduleRepeating(occurencesPerDay: 1),
-                                                                 userInfo: ["OCKTask": AssessmentTaskFactory.makeTemperatureAssessmentTask()],
+                                                                 userInfo: ["ORKTask": AssessmentTaskFactory.makeTemperatureAssessmentTask()],
                                                                  optional: false)
         
         let activities = [cardioActivity,
