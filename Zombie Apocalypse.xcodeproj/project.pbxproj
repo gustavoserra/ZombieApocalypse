@@ -21,6 +21,7 @@
 		EC181E0D1F0E52BD000079A3 /* CareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC181E0A1F0E52B3000079A3 /* CareKit.framework */; };
 		EC181E0E1F0E52BD000079A3 /* CareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC181E0A1F0E52B3000079A3 /* CareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC181E121F0E6740000079A3 /* CareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC181E111F0E6740000079A3 /* CareData.swift */; };
+		EC647A0E1F137B9D00BE04E8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC647A0D1F137B9D00BE04E8 /* HealthKit.framework */; };
 		ECFC77751F0F912A006C77E5 /* AssessmentTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFC77741F0F912A006C77E5 /* AssessmentTaskFactory.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,8 @@
 		EC181DFD1F0E4EC6000079A3 /* CareStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareStoreManager.swift; sourceTree = "<group>"; };
 		EC181E031F0E52B3000079A3 /* CareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKit.xcodeproj; path = ../carekit/CareKit.xcodeproj; sourceTree = "<group>"; };
 		EC181E111F0E6740000079A3 /* CareData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareData.swift; sourceTree = "<group>"; };
+		EC647A0B1F137B9C00BE04E8 /* Zombie Apocalypse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Zombie Apocalypse.entitlements"; sourceTree = "<group>"; };
+		EC647A0D1F137B9D00BE04E8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		ECFC77741F0F912A006C77E5 /* AssessmentTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentTaskFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC647A0E1F137B9D00BE04E8 /* HealthKit.framework in Frameworks */,
 				EC181E0D1F0E52BD000079A3 /* CareKit.framework in Frameworks */,
 				EC181DDD1F0E402A000079A3 /* ResearchKit.framework in Frameworks */,
 			);
@@ -121,6 +125,7 @@
 				EC181DAE1F0E312D000079A3 /* Zombie Apocalypse */,
 				EC181DEF1F0E4230000079A3 /* Linked Frameworks */,
 				EC181DAD1F0E312D000079A3 /* Products */,
+				EC647A0C1F137B9D00BE04E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +140,7 @@
 		EC181DAE1F0E312D000079A3 /* Zombie Apocalypse */ = {
 			isa = PBXGroup;
 			children = (
+				EC647A0B1F137B9C00BE04E8 /* Zombie Apocalypse.entitlements */,
 				EC181DFC1F0E4E97000079A3 /* Care Plan Store */,
 				EC181DAF1F0E312D000079A3 /* AppDelegate.swift */,
 				EC181DF21F0E44D8000079A3 /* MainTabViewController.swift */,
@@ -194,6 +200,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		EC647A0C1F137B9D00BE04E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC647A0D1F137B9D00BE04E8 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,7 +243,13 @@
 				TargetAttributes = {
 					EC181DAB1F0E312D000079A3 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LVECUMKDR4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -454,6 +474,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Zombie Apocalypse/Zombie Apocalypse.entitlements";
+				DEVELOPMENT_TEAM = LVECUMKDR4;
 				INFOPLIST_FILE = "Zombie Apocalypse/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "iHealthLabs.Zombie-Apocalypse";
@@ -467,6 +489,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Zombie Apocalypse/Zombie Apocalypse.entitlements";
+				DEVELOPMENT_TEAM = LVECUMKDR4;
 				INFOPLIST_FILE = "Zombie Apocalypse/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "iHealthLabs.Zombie-Apocalypse";

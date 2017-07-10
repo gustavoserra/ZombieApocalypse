@@ -27,7 +27,7 @@ class CareData: NSObject {
         self.careStore = careStore
         
         let cardioActivity = OCKCarePlanActivity(identifier: ActivityIdentifier.cardio.rawValue,
-                                                 groupIdentifier: nil,
+                                                 groupIdentifier: "Activities",
                                                  type: .intervention,
                                                  title: "Cardio",
                                                  text: "60 minutes",
@@ -39,7 +39,7 @@ class CareData: NSObject {
                                                  userInfo: nil)
         
         let limberUpActivity = OCKCarePlanActivity(identifier: ActivityIdentifier.limberUp.rawValue,
-                                                   groupIdentifier: nil,
+                                                   groupIdentifier: "Activities",
                                                    type: .intervention,
                                                    title: "Limber Up",
                                                    text: "Stretch Regularly",
@@ -51,7 +51,7 @@ class CareData: NSObject {
                                                    userInfo: nil)
         
         let targetPracticeActivity = OCKCarePlanActivity(identifier: ActivityIdentifier.targetPractice.rawValue,
-                                                         groupIdentifier: nil,
+                                                         groupIdentifier: "Activities",
                                                          type: .intervention,
                                                          title: "Target Practice",
                                                          text: nil,
@@ -63,17 +63,17 @@ class CareData: NSObject {
                                                          userInfo: nil)
         
         let pulseActivity = OCKCarePlanActivity.assessment(withIdentifier: ActivityIdentifier.pulse.rawValue,
-                                                           groupIdentifier: nil,
+                                                           groupIdentifier: "Assessements",
                                                            title: "Pulse",
                                                            text: "Do you have one?",
                                                            tintColor: UIColor.darkGreen(),
                                                            resultResettable: true,
                                                            schedule: CareData.dailyScheduleRepeating(occurencesPerDay: 1),
-                                                           userInfo: ["ORKTask": AssessmentTaskFactory.makeTemperatureAssessmentTask()],
+                                                           userInfo: ["ORKTask": AssessmentTaskFactory.makePulseAssessmentTask()],
                                                            optional: false)
         
         let temperatureActivity = OCKCarePlanActivity.assessment(withIdentifier: ActivityIdentifier.temperature.rawValue,
-                                                                 groupIdentifier: nil,
+                                                                 groupIdentifier: "Assessements",
                                                                  title: "Temperature",
                                                                  text: "Oral",
                                                                  tintColor: UIColor.darkYellow(),
