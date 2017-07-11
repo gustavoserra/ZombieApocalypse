@@ -22,6 +22,53 @@ class CareData: NSObject {
 
     let careStore: OCKCarePlanStore
     
+    let contacts =
+        [OCKContact(contactType: .personal,
+                    name: "Shaun Riley",
+                    relation: "Friend",
+                    contactInfoItems: [OCKContactInfo(type: .phone,
+                                                      display: "888-555-5512",
+                                                      actionURL: nil),
+                                       OCKContactInfo(type: .message,
+                                                      display: "888-555-5512",
+                                                      actionURL: nil),
+                                       OCKContactInfo(type: .email,
+                                                      display: "shaunofthedead@example.com",
+                                                      actionURL: nil)],
+                    tintColor: nil,
+                    monogram: "SR",
+                    image: UIImage(named: "shaun-avatar")),
+         OCKContact(contactType: .careTeam,
+                    name: "Columbus Ohio",
+                    relation: "Therapist",
+                    contactInfoItems: [OCKContactInfo(type: .phone,
+                                                      display: "888-555-5235",
+                                                      actionURL: nil),
+                                       OCKContactInfo(type: .message,
+                                                      display: "888-555-5235",
+                                                      actionURL: nil),
+                                       OCKContactInfo(type: .email,
+                                                      display: "columbus@example.com",
+                                                      actionURL: nil)],
+                    tintColor: nil,
+                    monogram: "CO",
+                    image: UIImage(named: "columbus-avatar")),
+         OCKContact(contactType: .careTeam,
+                    name: "Dr Hershel Greene",
+                    relation: "Veterinarian",
+                    contactInfoItems: [OCKContactInfo(type: .phone,
+                                                      display: "888-555-2351",
+                                                      actionURL: nil),
+                                       OCKContactInfo(type: .message,
+                                                      display: "888-555-2351",
+                                                      actionURL: nil),
+                                       OCKContactInfo(type: .email,
+                                                      display: "dr.hershel@example.com",
+                                                      actionURL: nil)],
+                    tintColor: nil,
+                    monogram: "HG",
+                    image: UIImage(named: "hershel-avatar"))]
+    
     init(careStore: OCKCarePlanStore) {
         
         self.careStore = careStore
