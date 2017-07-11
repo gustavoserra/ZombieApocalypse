@@ -159,3 +159,24 @@ class CareData: NSObject {
         return OCKCareSchedule.dailySchedule(withStartDate: DateComponents.firstDateOfCurrentWeek, occurrencesPerDay: occurencesPerDay)
     }
 }
+
+extension CareData {
+    
+    func generateDocumentWith(chart: OCKChart?) -> OCKDocument {
+        
+        let intro = OCKDocumentElementParagraph(content: "I've been tracking my efforts to avoid becoming a Zombie with ZombieKit. Please check the attached report to see if you're safe around me.")
+        
+        var documentElements: [OCKDocumentElement] = [intro]
+        
+        if let chart = chart {
+            
+            documentElements.append(OCKDocumentElementChart(chart: chart))
+        }
+        
+        let document = OCKDocument(title: "Re: Your Brains",
+                                   elements: documentElements)
+        document.pageHeader = "Zombie: Weekly Report"
+        
+        return document
+    }
+}

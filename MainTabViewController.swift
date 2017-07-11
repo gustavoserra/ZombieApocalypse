@@ -19,6 +19,8 @@ class MainTabViewController: UITabBarController {
     fileprivate var careCardViewController: OCKCareContentsViewController? = nil
     fileprivate var insightsViewController: OCKInsightsViewController? = nil
     
+    fileprivate var insightChart: OCKBarChart? = nil
+    
     required init?(coder aDecoder: NSCoder) {
         
         self.carePlanData = CareData(careStore: self.carePlanStoreManager.store)
@@ -72,6 +74,8 @@ class MainTabViewController: UITabBarController {
         
         let viewController = OCKConnectViewController(contacts: carePlanData.contacts)
         
+        viewController.delegate = self
+        
         viewController.tabBarItem = UITabBarItem(title: "Connect", image: UIImage(named: "connect"), selectedImage: UIImage.init(named: "connect-filled"))
         viewController.title = "Connect"
         
@@ -123,9 +127,28 @@ extension MainTabViewController: ORKTaskViewControllerDelegate {
     }
 }
 
+extension MainTabViewController: OCKConnectViewControllerDelegate {
+    
+    func connectViewController(_ connectViewController: OCKConnectViewController, didSelectShareButtonFor contact: OCKContact, presentationSourceView sourceView: UIView?) {
+        
+        let document = carePlanData.generateDocumentWith(chart: insightChart)
+        let activityViewController = UIActivityViewController(activityItems: [document.htmlContent],
+                                                              applicationActivities: nil)
+        
+        present(activityViewController,
+                animated: true,
+                completion: nil)
+    }
+}
+
 extension MainTabViewController: CareStoreManagerDelegate {
     
     func careStore(_ store: OCKCarePlanStore, didUpdateInsights insights: [OCKInsightItem]) {
+        
+        if let trainingPlan = (insights.filter { $0.title == "Zombie Training Plan" }.first) {
+            
+            insightChart = trainingPlan as? OCKBarChart
+        }
         
         self.insightsViewController?.items = insights
     }
