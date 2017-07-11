@@ -14,6 +14,8 @@ enum ActivityIdentifier: String {
     case cardio
     case limberUp = "Limber Up"
     case targetPractice = "Target Practice"
+    case sleep
+    case protectYourself = "Protect Yourself"
     case pulse
     case temperature
 }
@@ -109,6 +111,29 @@ class CareData: NSObject {
                                                          resultResettable: true,
                                                          userInfo: nil)
         
+        let sleepActivity = OCKCarePlanActivity(identifier: ActivityIdentifier.sleep.rawValue,
+                                                groupIdentifier: nil,
+                                                type: .intervention,
+                                                title: "Sleep",
+                                                text: nil,
+                                                tintColor: UIColor.darkYellow(),
+                                                instructions: "Go to bed and try to sleep",
+                                                imageURL: nil,
+                                                schedule: CareData.dailyScheduleRepeating(occurencesPerDay: 1),
+                                                resultResettable: false,
+                                                userInfo: nil,
+                                                thresholds: nil,
+                                                optional: true)
+        
+        let protectYourselfActivity = OCKCarePlanActivity.readOnly(withIdentifier: ActivityIdentifier.protectYourself.rawValue,
+                                                           groupIdentifier: nil,
+                                                           title: "Protect Yourself",
+                                                           text: nil,
+                                                           instructions: "You must protect your skin for do not be bitten and if you see a Zombie you need to shot at the head to kill him",
+                                                           imageURL: nil,
+                                                           schedule: CareData.dailyScheduleRepeating(occurencesPerDay: 1),
+                                                           userInfo: nil)
+        
         let pulseActivity = OCKCarePlanActivity.assessment(withIdentifier: ActivityIdentifier.pulse.rawValue,
                                                            groupIdentifier: "Assessements",
                                                            title: "Pulse",
@@ -132,6 +157,8 @@ class CareData: NSObject {
         let activities = [cardioActivity,
                           limberUpActivity,
                           targetPracticeActivity,
+                          sleepActivity,
+                          protectYourselfActivity,
                           pulseActivity,
                           temperatureActivity]
         
